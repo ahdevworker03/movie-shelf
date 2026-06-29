@@ -10,12 +10,14 @@ build/
 .env
 .env.local
 .env.*.local
+.env.example
 
 # System files
 .DS_Store
 Thumbs.db
 
 # IDE / Editor
+docs/
 .vscode/*
 !.vscode/extensions.json
 .idea/
