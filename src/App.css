@@ -18,6 +18,16 @@
   padding: 1.5rem;
 }
 
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+
+  .page {
+    gap: 1rem;
+  }
+}
+
 @media (min-width: 768px) {
   .main-content {
     padding: 2rem;

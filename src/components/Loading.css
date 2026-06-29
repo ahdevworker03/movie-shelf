@@ -30,3 +30,9 @@
   border-radius: 50%;
   animation: spin 0.65s linear infinite;
 }
+
+@media (max-width: 480px) {
+  .loading {
+    padding: 2rem 0.75rem;
+  }
+}
