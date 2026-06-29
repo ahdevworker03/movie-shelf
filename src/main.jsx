@@ -6,7 +6,7 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/movie-shelf">
+    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/movie-shelf'}>
       <App />
     </BrowserRouter>
   </StrictMode>,
