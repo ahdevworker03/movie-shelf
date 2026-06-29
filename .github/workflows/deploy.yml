@@ -32,6 +32,7 @@ jobs:
       - run: npm run build
         env:
           VITE_OMDB_API_KEY: ${{ secrets.VITE_OMDB_API_KEY }}
+          VITE_BASE_URL: /movie-shelf/
 
       - uses: actions/configure-pages@v4
 
