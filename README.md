@@ -1,109 +1,151 @@
 # MovieShelf 🎬
 
-A modern React application for discovering, searching, and managing your movie watchlist. Powered by the OMDB API, MovieShelf lets you search thousands of films, save them to a Watch Later list, and track what you've already watched — all with a clean, responsive UI and localStorage persistence.
+## 🚀 Live Demo
 
-## Features
+Experience the live deployed version of MovieShelf:
 
-- **Live Search** — Search movies with a debounced autocomplete dropdown that shows posters, titles, and years
-- **Discover Feed** — A rotating default movie feed on the home page so there's always something to browse
-- **Watch Later** — Add movies to a personal Watch Later list with one click
-- **Watched Tracking** — Move movies from Watch Later to Watched as you go
-- **Persistent Lists** — Your Watch Later and Watched lists survive page refreshes via localStorage
-- **404 Handling** — Unknown routes show a friendly "Page not found" page
-- **Error Resilience** — App-level Error Boundary catches crashes gracefully
-- **Accessible** — ARIA labels, roles, and semantic HTML for screen reader support
-- **Responsive Grid** — CSS Grid layout adapts from 1 column on mobile to 4 columns on desktop
-- **Keyboard Friendly** — Focus-visible outlines for keyboard navigation
+👉 **https://ahdevworker03.github.io/movie-shelf/**
 
-## Tech Stack
+---
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | [React 19](https://react.dev/) |
-| Routing | [React Router 7](https://reactrouter.com/) |
-| Build Tool | [Vite 8](https://vite.dev/) |
-| Data API | [OMDB API](https://www.omdbapi.com/) |
-| State | React Context + useReducer + useState |
-| Persistence | localStorage with type validation |
-| Styling | Plain CSS (no frameworks) |
-| Linting | ESLint with React Hooks plugin |
+## 📌 Overview
 
-## Project Structure
+MovieShelf is a modern React application for discovering, searching, and managing movies. It uses the OMDB API to fetch movie data and provides a clean workflow for searching films, saving them to a Watch Later list, and tracking watched movies.
+
+The project focuses on state management, routing, persistence, and a clean component-based architecture suitable for production-level React applications.
+
+---
+
+## ✨ Features
+
+- 🔎 **Live Search** — Debounced search with autocomplete suggestions (title, poster, year)
+- 🎬 **Movie Discovery Feed** — Default homepage feed showing trending/popular movies
+- 📥 **Watch Later List** — Save movies for later viewing
+- ✅ **Watched Tracking** — Move movies from Watch Later to Watched
+- 💾 **Persistent Storage** — Data persists using localStorage
+- 🧭 **Client-Side Routing** — Smooth navigation between pages
+- ⚠️ **404 Handling** — Friendly fallback page for invalid routes
+- 🧱 **Error Boundary** — Prevents full app crashes
+- 📱 **Responsive UI** — Mobile-first grid layout (1 → 4 columns)
+- ♿ **Accessible UI** — ARIA labels, semantic structure, keyboard support
+
+---
+
+## 🧱 Tech Stack
+
+| Layer      | Technology               |
+| ---------- | ------------------------ |
+| Framework  | React 19                 |
+| Routing    | React Router             |
+| Build Tool | Vite                     |
+| API        | OMDB API                 |
+| State      | Context API + useReducer |
+| Storage    | localStorage             |
+| Styling    | Plain CSS                |
+| Linting    | ESLint                   |
+
+---
+
+## 📁 Project Structure
 
 ```
 src/
-├── main.jsx              # Entry point
-├── App.jsx               # Root layout, routes, providers
-├── context/              # Global state (reducer + provider)
-├── hooks/                # Custom React hooks
-├── pages/                # Route-level page components
-├── components/           # Reusable UI components
-└── utils/                # API calls, storage helpers
+├── main.jsx      # App entry point
+├── App.jsx       # Routes + layout
+├── context/      # Global state (Context + Reducer)
+├── hooks/        # Custom hooks
+├── pages/        # Route pages
+├── components/   # UI components
+└── utils/        # API + storage helpers
 ```
 
-## Getting Started
+---
+
+## ⚙️ Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
 - npm 9+
-- An [OMDB API key](https://www.omdbapi.com/apikey.aspx) (free tier available)
+- OMDB API Key (free): https://www.omdbapi.com/apikey.aspx
 
-### Setup
+---
+
+### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/ahdevworker03/movie-shelf.git
 cd movie-shelf
 
-# Install dependencies
 npm install
+```
 
-# Configure your API key
-cp .env.example .env
-# Edit .env and set VITE_OMDB_API_KEY=your_key_here
+---
 
-# Start the development server
+### Environment Setup
+
+Create a `.env` file:
+
+```env
+VITE_OMDB_API_KEY=your_api_key_here
+```
+
+---
+
+### Run Locally
+
+```bash
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`.
+App runs at:
 
-## Available Scripts
+```
+http://localhost:5173
+```
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start the Vite development server with HMR |
-| `npm run build` | Build the app for production into `dist/` |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint across all source files |
-| `npm run deploy` | Build and deploy to GitHub Pages |
+---
 
-## Deployment
+## 📦 Build & Scripts
 
-### GitHub Pages
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build production app     |
+| `npm run preview` | Preview production build |
+| `npm run lint`    | Run ESLint               |
+| `npm run deploy`  | Deploy to GitHub Pages   |
 
-The app is configured for GitHub Pages deployment. The `base` path is set to `/movie-shelf/` in `vite.config.js`.
+---
 
-**Automatic (GitHub Actions):** Push to the `main` branch and the included workflow will build and deploy to the `gh-pages` branch automatically.
+## 🌍 Deployment
 
-**Manual:** Run `npm run deploy` to build and push the `dist/` folder to the `gh-pages` branch.
+MovieShelf is deployed using **GitHub Pages**.
 
-Once deployed, the app will be live at:
+### Live URL
+
 ```
 https://ahdevworker03.github.io/movie-shelf/
 ```
 
-### Configuration
+### Notes
 
-All environment variables are documented in `.env.example`:
+- The project uses `vite.config.js` base path: `/movie-shelf/`
+- React Router is configured for GitHub Pages compatibility
+- Build output is deployed to `gh-pages` branch
+
+---
+
+## 🔐 Environment Variables
+
+All sensitive keys are stored in environment variables and never committed:
 
 ```env
-VITE_OMDB_API_KEY=your_omdb_api_key_here
+VITE_OMDB_API_KEY=your_api_key_here
 ```
 
-The API key is loaded at build time via `import.meta.env.VITE_OMDB_API_KEY` and is **never committed** to the repository (`.env` is gitignored).
+---
 
-## License
+## 📄 License
 
 MIT
