@@ -57,6 +57,38 @@
   .movie-list {
     gap: 0.85rem;
   }
+
+  .placeholder,
+  .error {
+    padding: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .section {
+    padding: 1.25rem;
+  }
+
+  .movie-list {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section {
+    padding: 1.25rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .movie-list {
+    gap: 1rem;
+  }
 }
 
 @media (min-width: 480px) {

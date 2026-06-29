@@ -28,7 +28,27 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-content {
+    padding: 1.25rem;
+  }
+
+  .page {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+
+  .page {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .main-content {
     padding: 2rem;
   }
